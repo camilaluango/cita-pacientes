@@ -14,6 +14,8 @@ function citaCercana(fechaPaciente){
         if(diferencia < diferenciaMin){
             citaCercana = citasMedicas[i];
             diferenciaMin = diferencia;
+        } else {
+            break;
         }
 
     }
