@@ -4,13 +4,13 @@ const fechaPaciente = "2024-03-22"
 function encontrarcitaCercana(fechaPaciente){
     if (citasMedicas.length === 0)
         return null;
-    
-    let fechaPacienteDate = new Date(fechaPaciente);
+
+    let fechaPacienteDate = Date.parse(fechaPaciente);
     let citaCercana = citasMedicas[0];
-    let diferenciaMin = Math.abs(new Date(citaCercana) - fechaPacienteDate);
+    let diferenciaMin = Math.abs(Date.parse(citaCercana) - fechaPacienteDate);
 
     for (let i = 1; i < citasMedicas.length; i++){
-        let fechaCita = new Date(citasMedicas[i]);
+        let fechaCita = Date.parse(citasMedicas[i]);
         let diferencia = Math.abs(fechaCita - fechaPacienteDate);
 
         if(diferencia < diferenciaMin){
