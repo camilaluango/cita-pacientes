@@ -8,7 +8,14 @@ function citaCercana(fechaPaciente){
     let diferenciaMin = Math.abs(new Date(citaCercana) - fechaPacienteDate);
 
     for (let i = 1; i < citasMedicas.length; i++){
-        
+        let fechaCita = new Date(citasMedicas[i]);
+        let diferencia = Math.abs(fechaCita - fechaPacienteDate);
+
+        if(diferencia < diferenciaMin){
+            citaCercana = citasMedicas[i];
+            diferenciaMin = diferencia;
+        }
+
     }
 
 }
